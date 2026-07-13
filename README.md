@@ -236,28 +236,3 @@ Authorization: Bearer <your_access_token> (Required for protected routes)
    ```
 5. Visit `http://127.0.0.1:8000` in your web browser.
 
-### 5.2 Running with Docker
-The repository includes a ready-to-run `Dockerfile` and `docker-compose.yml`:
-1. Build and boot containers:
-   ```bash
-   docker-compose up --build
-   ```
-2. Re-run database migrations and seeders inside container:
-   ```bash
-   docker-compose exec app php artisan migrate --seed
-   ```
-3. The server runs at `http://localhost:8000`.
-
-### 5.3 Ngrok Tunneling (Backend)
-To expose your local Laravel backend APIs to the public web (necessary for payment webhooks or Vercel static frontends):
-```bash
-ngrok http 8000
-```
-Update your Vercel client base URL or Stripe webhook endpoint to the generated HTTPS forwarding url:
-- e.g. `https://e3a2-103-xxx.ngrok-free.app`
-
-### 5.4 Frontend Deployment on Vercel
-The front-end is written as a fully decoupled SPA in HTML and Vanilla JS.
-1. Extract the content of `resources/views/welcome.blade.php` and save it as a standalone static file `index.html` in a separate repository or folder.
-2. Search and update the API base URL in the Javascript script from `/api` to your public ngrok URL (e.g. `https://your-ngrok-id.ngrok-free.app/api`).
-3. Deploy this folder containing `index.html` directly to **Vercel** with a single click.
