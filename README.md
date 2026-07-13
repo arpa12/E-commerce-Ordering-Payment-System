@@ -261,5 +261,6 @@ The front-end is written as a fully decoupled SPA in HTML and Vanilla JS.
 1. Extract the content of `resources/views/welcome.blade.php` and save it as a standalone static file `index.html` in a separate repository or folder.
 2. Search and update the API base URL in the Javascript script from `/api` to your public ngrok URL (e.g. `https://your-ngrok-id.ngrok-free.app/api`).
 3. Deploy this folder containing `index.html` directly to **Vercel** with a single click.
-#   E - c o m m e r c e - O r d e r i n g - P a y m e n t - S y s t e m  
+#   E - c o m m e r c e - O r d e r i n g - P a y m e n t - S y s t e m 
+ 
  
